@@ -12,6 +12,11 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 
+
+// const knexConfig = require('./db/knexfile');
+// //initialize knex
+// const knex = require('knex')(knexConfig[process.env.NODE_ENV])
+
 let id = 3
 let savedData = [
     {'id':0,'Name':'N342','Cost':'377'},
