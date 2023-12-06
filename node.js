@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 
+let id = 3
 let savedData = [
     {'id':0,'Name':'N342','Cost':'377'},
     {'id':1,'Name':'M54','Cost':'342'},
@@ -24,6 +25,7 @@ let savedData = [
 
 
 app.get('/',(req,res) => {
+    console.log('get')
     return res.send(savedData);
 })
 
@@ -40,7 +42,8 @@ app.put('/',(req,res)=>{
 })
 
 app.post('/',(req,res) => {
-    savedData.push({id:savedData.length,Name:req.body.name,Cost:req.body.cost})
+    savedData.push({id:id,Name:req.body.name,Cost:req.body.cost})
+    id++
 
     return res.send(savedData);
 })
